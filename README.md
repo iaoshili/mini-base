@@ -11,7 +11,7 @@ http://localhost:5001/ping
 For Flask admin, go to:
 http://localhost:5001/admin/user/
 
-## Shortcuts
-Build and run: make run
-
-Test: make test
+# Workflow
+- Build and run: make run
+- Create db and dummy data: make builddb
+- Run test: make test
