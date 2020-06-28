@@ -22,3 +22,6 @@ http://localhost:5001/admin/user/
 - Create db and dummy data: make builddb
 - Run test: make test
 
+# To copy these to your folder
+- clone this repo
+- `rsync -av --progress mini-base/ <your awesome directory> --exclude .git`
