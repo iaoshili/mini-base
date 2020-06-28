@@ -9,6 +9,8 @@ services:
     entrypoint: ['/usr/src/app/entrypoint.sh']
     volumes:
       - './services/users:/usr/src/app'
+      - users-extensions:/root/.vscode-server/extensions
+      - users-insiders-extensions:/root/.vscode-server-insiders/extensions
     ports:
       - 5001:5000
     environment:
@@ -29,6 +31,8 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
 
+
+# Uncomment this when you are ready to develop front end
   client:
     build:
       context: ./services/client
@@ -44,3 +48,6 @@ services:
     depends_on:
       - users
 
+volumes:
+  users-extensions:
+  users-insiders-extensions:
