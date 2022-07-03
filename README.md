@@ -25,3 +25,6 @@ http://localhost:5001/admin/user/
 # To copy these to your folder
 - clone this repo
 - `rsync -av --progress mini-base/ <your awesome directory> --exclude .git`
+
+# Features
+- Global cache with Redis
