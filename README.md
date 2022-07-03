@@ -28,3 +28,4 @@ http://localhost:5001/admin/user/
 
 # Features
 - Global cache with Redis
+- A message queue worker
