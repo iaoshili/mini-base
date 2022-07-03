@@ -11,3 +11,6 @@ builddb:
 	docker-compose exec users python manage.py recreate_db
 	docker-compose exec users python manage.py seed_db
 
+.PHONY: worker
+worker:
+	docker-compose exec -it users python3 project/mq/worker.py
