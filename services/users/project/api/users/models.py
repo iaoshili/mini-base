@@ -5,9 +5,24 @@ import datetime
 import os
 
 import jwt
-from flask import current_app
+from flask import Flask, current_app
+from flask_mongoengine import MongoEngine
+from mongoengine import (DateTimeField, Document, ListField, ReferenceField,
+                         StringField)
 from project import db
 from sqlalchemy.sql import func
+
+app = Flask(__name__)
+app.config['MONGODB_SETTINGS'] = {
+    'db': 'mongo',
+    'host': 'nosql-db',
+    'port': 27017
+}
+mongo = MongoEngine()
+mongo.init_app(app)
+
+class Contact(mongo.Document):
+    name = StringField(max_length=60, required=True, unique=True)
 
 
 class User(db.Model):
